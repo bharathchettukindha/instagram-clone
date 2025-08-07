@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="icon"  href="/images/logo.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex bg-white text-gray-800 min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="bg-stone-50 w-[100px] min-h-screen">
+      <a href="/" class="m-20">
+        <img
+          src="/images/insta1.webp"
+          alt="insta"
+          class="w-10 h-10 mx-auto mt-5 p-1.5"
+        />
+      </a>
+      <a href="/home"
+        ><img src="/images/home.webp" class="w-12 h-12 mx-auto mt-5 p-1"
+      /></a>
+      <a href="/search"
+        ><img src="/images/seach.webp" class="w-12 h-12 mx-auto mt-7 p-2"
+      /></a>
+      <a href="/explore"
+        ><img src="/images/comapss.png" class="w-12 h-12 mx-auto mt-7 p-1.5"
+      /></a>
+      <a href="/reel"
+        ><img src="/images/reel2.png" class="w-12 h-12 mx-auto mt-8 p-1.5"
+      /></a>
+      <a href="/messages"
+        ><img src="/images/images.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/likes"
+        ><img src="/images/like.png" class="w-12 h-12 mx-auto mt-8 p-1"
+      /></a>
+      <a href="/postcreate"
+        ><img src="/images/create.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/profile"
+        ><img
+          src="/images/buddies.webp"
+          class="w-12 h-12 rounded-full mx-auto mt-8"
+      /></a>
+
+      <!-- Menu Button -->
+      <div class="relative inline-block text-left mx-auto mt-5 w-10 ml-7">
+        <a
+          id="menuButton"
+          class="w-10 h-10 flex items-center justify-center text-3xl cursor-pointer"
+          >☰</a
+        >
+        <div
+          id="dropdownMenu"
+          class="hidden absolute left-0 bottom-full mb-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-[50]"
+        >
+          <div class="py-1 text-l text-gray-700">
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">⚙️ Settings</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🗂️ Your activity</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🔖 Saved</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🌞 Switch appearance</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >❗ Report a problem</a
+            >
+            <div class="border-t my-2"></div>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🧵 Threads</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >Switch accounts</a
+            >
+            <a
+              href="/logout"
+              class="flex px-4 py-2 text-red-600 hover:bg-gray-100"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-4 text-center">
+      <h1 class="text-3xl font-bold mb-4">Explore Page</h1>
+      <p class="text-lg">This is the explore page content.</p>
+
+      <div class="mt-8">
+        <img src="/images/buddies.webp"
+             alt="Explore Content"
+             class="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-lg shadow-lg" />
+      </div>
+
+      <div class="mt-8">
+        <p class="text-gray-600 mb-2">Discover new content and connect with others.</p>
+        <a href="/explore" class="text-blue-500 hover:underline">Explore Now</a>
+      </div>
+    </main>
+
+    <!-- JS for dropdown -->
+    <script>
+      const menuButton = document.getElementById('menuButton');
+      const dropdownMenu = document.getElementById('dropdownMenu');
+
+      menuButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

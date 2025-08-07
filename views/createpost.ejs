@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Post</title>
+    <link rel="icon" href="/images/logo.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="flex bg-white text-gray-800 min-h-screen">
+
+    <!-- Sidebar -->
+ <aside class="bg-stone-50 w-[100px] min-h-screen">
+      <a href="/" class="m-20">
+        <img
+          src="/images/insta1.webp"
+          alt="insta"
+          class="w-10 h-10 mx-auto mt-5 p-1.5"
+        />
+      </a>
+      <a href="/home"
+        ><img src="/images/home.webp" class="w-12 h-12 mx-auto mt-5 p-1"
+      /></a>
+      <a href="/search"
+        ><img src="/images/seach.webp" class="w-12 h-12 mx-auto mt-7 p-2"
+      /></a>
+      <a href="/explore"
+        ><img src="/images/comapss.png" class="w-12 h-12 mx-auto mt-7 p-1.5"
+      /></a>
+      <a href="/reel"
+        ><img src="/images/reel2.png" class="w-12 h-12 mx-auto mt-8 p-1.5"
+      /></a>
+      <a href="/messages"
+        ><img src="/images/images.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/likes"
+        ><img src="/images/like.png" class="w-12 h-12 mx-auto mt-8 p-1"
+      /></a>
+      <a href="/postcreate"
+        ><img src="/images/create.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/profile"
+        ><img
+          src="/images/buddies.webp"
+          class="w-12 h-12 rounded-full mx-auto mt-8"
+      /></a>
+
+      <!-- Menu Button -->
+      <div class="relative inline-block text-left mx-auto mt-5 w-10 ml-7">
+        <a
+          id="menuButton"
+          class="w-10 h-10 flex items-center justify-center text-3xl cursor-pointer"
+          >☰</a
+        >
+        <div
+          id="dropdownMenu"
+          class="hidden absolute left-0 bottom-full mb-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-[50]"
+        >
+          <div class="py-1 text-l text-gray-700">
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">⚙️ Settings</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🗂️ Your activity</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🔖 Saved</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🌞 Switch appearance</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >❗ Report a problem</a
+            >
+            <div class="border-t my-2"></div>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🧵 Threads</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >Switch accounts</a
+            >
+            <a
+              href="/logout"
+              class="flex px-4 py-2 text-red-600 hover:bg-gray-100"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center px-4 py-10">
+      <h1 class="text-3xl font-bold mb-6">Create a New Post</h1>
+
+      <form id="postForm" class="w-full max-w-lg bg-gray-50 p-6 rounded-lg shadow">
+        <div class="mb-4">
+          <label for="image" class="block text-sm font-semibold mb-2">Select Image</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            required
+            class="block w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label for="caption" class="block text-sm font-semibold mb-2">Caption</label>
+          <textarea
+            id="caption"
+            name="caption"
+            rows="3"
+            placeholder="Write a caption..."
+            class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg"
+          >
+            Post
+          </button>
+        </div>
+      </form>
+
+      <!-- Preview -->
+      <div id="preview" class="mt-10 w-full max-w-lg hidden bg-gray-100 p-4 rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">Post Preview</h2>
+        <img id="previewImage" src="" alt="Image Preview" class="w-full rounded mb-4" />
+        <p id="previewCaption" class="text-gray-700"></p>
+      </div>
+    </main>
+
+    <!-- Script -->
+    <script>
+      const form = document.getElementById("postForm");
+      const preview = document.getElementById("preview");
+      const previewImage = document.getElementById("previewImage");
+      const previewCaption = document.getElementById("previewCaption");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const file = document.getElementById("image").files[0];
+        const caption = document.getElementById("caption").value;
+
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            previewImage.src = event.target.result;
+            previewCaption.textContent = caption;
+            preview.classList.remove("hidden");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      // Dropdown toggle
+      document.getElementById("menuButton").addEventListener("click", () => {
+        const menu = document.getElementById("dropdownMenu");
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

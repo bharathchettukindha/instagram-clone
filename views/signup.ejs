@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up - Instagram</title>
+  <link rel="icon" href="/images/insta.webp" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white-100 flex flex-col items-center justify-center min-h-screen px-4">
+  <div class="bg-white w-full max-w-md rounded-lg shadow-md p-6">
+    <h1 class="text-4xl font-bold text-center font-serif">Instagram</h1>
+    <p class="text-center text-gray-600 mt-6 text-lg font-medium">Sign up to see photos and videos from your friends.</p>
+    <a href="https://www.facebook.com" class="flex items-center justify-center mt-6 mb-4 bg-blue-500 rounded-md" type="btn">
+      <img src="/images/facebook.webp" class="w-6 h-6 mr-2" alt="Facebook logo" />
+      <span class="text-white font-semibold text-base sm:text-lg">Log in with Facebook</span>
+    </a>
+    <div class="flex items-center my-4">
+      <div class="flex-grow h-px bg-gray-300"></div>
+      <span class="mx-4 text-sm text-gray-500">OR</span>
+      <div class="flex-grow h-px bg-gray-300"></div>
+    </div>
+    <form action="/signup" method="POST" class="space-y-4">
+      <input type="text" name="username" placeholder="Username" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <input type="email" name="email" placeholder="Email" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <input type="password" name="password" placeholder="Password" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <input type="password" name="confirmPassword" placeholder="Confirm Password" required
+        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
+      <button type="submit"
+        class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-md transition duration-200">
+        Sign Up
+      </button>
+    </form>
+    <p class="text-sm text-gray-500 text-center mt-4">
+      People who use our service may have uploaded your contact information to Instagram. 
+      <a href="/privacy" class="text-blue-500 font-semibold hover:underline">Learn more</a>
+    </p>
+
+    <p class="text-sm text-gray-500 text-center mt-4">
+      By signing up, you agree to our 
+      <a href="/terms" class="text-blue-500 font-semibold hover:underline">Terms</a> and 
+      <a href="/policy" class="text-blue-500 font-semibold hover:underline">Privacy Policy</a>.
+    </p>
+  </div>
+  <div class="bg-white w-full max-w-md mt-4 py-4 px-6 rounded-lg shadow text-center text-sm text-gray-600">
+    Already have an account?
+    <a href="/" class="text-blue-500 font-semibold hover:underline">Log in</a>
+  </div>
+  <footer class="text-gray-500 text-sm mt-10 text-center">
+    <p>English</p>
+    <p>© 2025 Instagram from Meta</p>
+  </footer>
+
+</body>
+</html>

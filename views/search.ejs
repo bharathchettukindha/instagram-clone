@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="icon" href="/images/logo.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+<body class="flex bg-white text-gray-800 min-h-screen">
+    <aside class="bg-stone-50 w-[100px] min-h-screen">
+      <a href="/" class="m-20">
+        <img
+          src="/images/insta1.webp"
+          alt="insta"
+          class="w-10 h-10 mx-auto mt-5 p-1.5"
+        />
+      </a>
+      <a href="/home"
+        ><img src="/images/home.webp" class="w-12 h-12 mx-auto mt-5 p-1"
+      /></a>
+      <a href="/search"
+        ><img src="/images/seach.webp" class="w-12 h-12 mx-auto mt-7 p-2"
+      /></a>
+      <a href="/explore"
+        ><img src="/images/comapss.png" class="w-12 h-12 mx-auto mt-7 p-1.5"
+      /></a>
+      <a href="/reel"
+        ><img src="/images/reel2.png" class="w-12 h-12 mx-auto mt-8 p-1.5"
+      /></a>
+      <a href="/messages"
+        ><img src="/images/images.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/likes"
+        ><img src="/images/like.png" class="w-12 h-12 mx-auto mt-8 p-1"
+      /></a>
+      <a href="/postcreate"
+        ><img src="/images/create.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/profile"
+        ><img
+          src="/images/buddies.webp"
+          class="w-12 h-12 rounded-full mx-auto mt-8"
+      /></a>
+      <div class="relative inline-block text-left mx-auto mt-5 w-10 ml-7">
+        <a
+          id="menuButton"
+          class="w-10 h-10 flex items-center justify-center text-3xl cursor-pointer"
+          >☰</a
+        >
+        <div
+          id="dropdownMenu"
+          class="hidden absolute left-0 bottom-full mb-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-[50]"
+        >
+          <div class="py-1 text-l text-gray-700">
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">⚙️ Settings</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🗂️ Your activity</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🔖 Saved</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🌞 Switch appearance</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >❗ Report a problem</a
+            >
+            <div class="border-t my-2"></div>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🧵 Threads</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >Switch accounts</a
+            >
+            <a
+              href="/logout"
+              class="flex px-4 py-2 text-red-600 hover:bg-gray-100"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+     <div id="searchModal" class="bg-white rounded-lg shadow-lg w-full max-w-xl p-6 relative">
+    <button id="closeModal" class="absolute top-2 right-3 text-gray-500 hover:text-black text-2xl font-bold">&times;</button>
+    <h1 class="text-3xl font-bold mb-4">Search</h1>
+    <input
+      type="text"
+      placeholder="Search..."
+      class="border border-gray-300 rounded-lg p-2 w-full mt-4"
+    />
+    <h2 class="text-2xl font-semibold mt-10">Results</h2>
+    <div class="mt-20 text-center text-gray-500">
+      <h3 class="text-xl font-medium">No Results Found</h3>
+    </div>
+  </div>
+   <script>
+    const closeModalBtn = document.getElementById('closeModal');
+    const searchModal = document.getElementById('searchModal');
+
+    closeModalBtn.addEventListener('click', () => {
+      window.location.href='/home';
+    });
+        const menuBtn = document.getElementById("menuButton");
+      const menu = document.getElementById("dropdownMenu");
+       menuBtn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      window.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+          menu.classList.add("hidden");
+        }
+      });
+
+  </script>
+  </div>
+</body>
+</html>

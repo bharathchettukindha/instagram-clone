@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications | Instagram</title>
+    <link rel="icon" type="image/webp" href="/images/logo.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body class="flex bg-white text-gray-800 min-h-screen">
+
+    <!-- Sidebar -->
+     <aside class="bg-stone-50 w-[100px] min-h-screen">
+      <a href="/" class="m-20">
+        <img
+          src="/images/insta1.webp"
+          alt="insta"
+          class="w-10 h-10 mx-auto mt-5 p-1.5"
+        />
+      </a>
+      <a href="/home"
+        ><img src="/images/home.webp" class="w-12 h-12 mx-auto mt-5 p-1"
+      /></a>
+      <a href="/search"
+        ><img src="/images/seach.webp" class="w-12 h-12 mx-auto mt-7 p-2"
+      /></a>
+      <a href="/explore"
+        ><img src="/images/comapss.png" class="w-12 h-12 mx-auto mt-7 p-1.5"
+      /></a>
+      <a href="/reel"
+        ><img src="/images/reel2.png" class="w-12 h-12 mx-auto mt-8 p-1.5"
+      /></a>
+      <a href="/messages"
+        ><img src="/images/images.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/likes"
+        ><img src="/images/like.png" class="w-12 h-12 mx-auto mt-8 p-1"
+      /></a>
+      <a href="/postcreate"
+        ><img src="/images/create.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/profile"
+        ><img
+          src="/images/buddies.webp"
+          class="w-12 h-12 rounded-full mx-auto mt-8"
+      /></a>
+
+      <!-- Menu Button -->
+      <div class="relative inline-block text-left mx-auto mt-5 w-10 ml-7">
+        <a
+          id="menuButton"
+          class="w-10 h-10 flex items-center justify-center text-3xl cursor-pointer"
+          >☰</a
+        >
+        <div
+          id="dropdownMenu"
+          class="hidden absolute left-0 bottom-full mb-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-[50]"
+        >
+          <div class="py-1 text-l text-gray-700">
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">⚙️ Settings</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🗂️ Your activity</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🔖 Saved</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🌞 Switch appearance</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >❗ Report a problem</a
+            >
+            <div class="border-t my-2"></div>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🧵 Threads</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >Switch accounts</a
+            >
+            <a
+              href="/logout"
+              class="flex px-4 py-2 text-red-600 hover:bg-gray-100"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 overflow-y-auto">
+      <h1 class="text-3xl font-bold mb-6">Notifications</h1>
+
+      <!-- Notifications Feed -->
+      <ul class="space-y-4">
+        <li class="flex items-center gap-4 bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition">
+          <img src="/images/buddies.webp" alt="User" class="w-10 h-10 rounded-full" />
+          <div class="flex-1">
+            <p><span class="font-semibold">travel_buddy</span> liked your photo.</p>
+            <p class="text-sm text-gray-500">2 minutes ago</p>
+          </div>
+          <img src="/images/explore.webp" alt="Post" class="w-12 h-12 object-cover rounded" />
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-gray-50 transition">
+          <img src="/images/buddies.webp" alt="User" class="w-10 h-10 rounded-full" />
+          <div class="flex-1">
+            <p><span class="font-semibold">catmom</span> commented: “Awww 😻”</p>
+            <p class="text-sm text-gray-500">10 minutes ago</p>
+          </div>
+          <img src="/images/explore.webp" alt="Post" class="w-12 h-12 object-cover rounded" />
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-gray-50 transition">
+          <img src="/images/buddies.webp" alt="User" class="w-10 h-10 rounded-full" />
+          <div class="flex-1">
+            <p><span class="font-semibold">john_doe</span> started following you.</p>
+            <p class="text-sm text-gray-500">1 hour ago</p>
+          </div>
+          <button class="text-blue-500 hover:underline font-medium">Follow</button>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-gray-50 transition">
+          <img src="/images/buddies.webp" alt="User" class="w-10 h-10 rounded-full" />
+          <div class="flex-1">
+            <p><span class="font-semibold">music_lover</span> mentioned you in a comment.</p>
+            <p class="text-sm text-gray-500">Yesterday</p>
+          </div>
+        </li>
+
+        <li class="flex items-center gap-4 px-4 py-3 rounded-lg hover:bg-gray-50 transition">
+          <img src="/images/buddies.webp" alt="User" class="w-10 h-10 rounded-full" />
+          <div class="flex-1">
+            <p><span class="font-semibold">code_master</span> tagged you in a post.</p>
+            <p class="text-sm text-gray-500">2 days ago</p>
+          </div>
+          <img src="/images/explore.webp" alt="Tagged Post" class="w-12 h-12 object-cover rounded" />
+        </li>
+      </ul>
+    </main>
+
+    <!-- Dropdown JS -->
+    <script>
+      const menuButton = document.getElementById("menuButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      menuButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>

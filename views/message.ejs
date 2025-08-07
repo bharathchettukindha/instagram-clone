@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages | Instagram</title>
+    <link rel="icon" type="image/webp" href="/images/logo.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    </style>
+  </head>
+  <body class="flex bg-white text-gray-800 min-h-screen">
+
+    <!-- Sidebar -->
+     <aside class="bg-stone-50 w-[100px] min-h-screen">
+      <a href="/" class="m-20">
+        <img
+          src="/images/insta1.webp"
+          alt="insta"
+          class="w-10 h-10 mx-auto mt-5 p-1.5"
+        />
+      </a>
+      <a href="/home"
+        ><img src="/images/home.webp" class="w-12 h-12 mx-auto mt-5 p-1"
+      /></a>
+      <a href="/search"
+        ><img src="/images/seach.webp" class="w-12 h-12 mx-auto mt-7 p-2"
+      /></a>
+      <a href="/explore"
+        ><img src="/images/comapss.png" class="w-12 h-12 mx-auto mt-7 p-1.5"
+      /></a>
+      <a href="/reel"
+        ><img src="/images/reel2.png" class="w-12 h-12 mx-auto mt-8 p-1.5"
+      /></a>
+      <a href="/messages"
+        ><img src="/images/images.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/likes"
+        ><img src="/images/like.png" class="w-12 h-12 mx-auto mt-8 p-1"
+      /></a>
+      <a href="/postcreate"
+        ><img src="/images/create.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/profile"
+        ><img
+          src="/images/buddies.webp"
+          class="w-12 h-12 rounded-full mx-auto mt-8"
+      /></a>
+
+      <!-- Menu Button -->
+      <div class="relative inline-block text-left mx-auto mt-5 w-10 ml-7">
+        <a
+          id="menuButton"
+          class="w-10 h-10 flex items-center justify-center text-3xl cursor-pointer"
+          >☰</a
+        >
+        <div
+          id="dropdownMenu"
+          class="hidden absolute left-0 bottom-full mb-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-[50]"
+        >
+          <div class="py-1 text-l text-gray-700">
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">⚙️ Settings</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🗂️ Your activity</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🔖 Saved</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🌞 Switch appearance</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >❗ Report a problem</a
+            >
+            <div class="border-t my-2"></div>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🧵 Threads</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >Switch accounts</a
+            >
+            <a
+              href="/logout"
+              class="flex px-4 py-2 text-red-600 hover:bg-gray-100"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 grid grid-cols-1 md:grid-cols-3 border-l border-gray-200">
+
+      <!-- Chat List -->
+      <section class="md:col-span-1 border-r border-gray-200 overflow-y-auto max-h-screen">
+        <div class="p-4 font-bold text-xl">Messages</div>
+        <ul class="divide-y divide-gray-200">
+          <li class="p-4 hover:bg-gray-50 cursor-pointer">
+            <div class="flex items-center gap-3">
+              <img src="/images/buddies.webp" class="w-10 h-10 rounded-full" />
+              <div>
+                <p class="font-medium">catmom</p>
+                <p class="text-sm text-gray-500">Meow meow 😺</p>
+              </div>
+            </div>
+          </li>
+          <li class="p-4 hover:bg-gray-50 cursor-pointer">
+            <div class="flex items-center gap-3">
+              <img src="/images/buddies.webp" class="w-10 h-10 rounded-full" />
+              <div>
+                <p class="font-medium">travel_buddy</p>
+                <p class="text-sm text-gray-500">Check this out!</p>
+              </div>
+            </div>
+          </li>
+          <li class="p-4 hover:bg-gray-50 cursor-pointer">
+            <div class="flex items-center gap-3">
+              <img src="/images/buddies.webp" class="w-10 h-10 rounded-full" />
+              <div>
+                <p class="font-medium">john_doe</p>
+                <p class="text-sm text-gray-500">Sure, see you at 5!</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Chat Window -->
+      <section class="md:col-span-2 flex flex-col h-screen">
+        <div class="flex items-center justify-between px-6 py-4 border-b">
+          <h2 class="text-lg font-bold">catmom</h2>
+        </div>
+
+        <!-- Messages -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-4">
+          <div class="text-left">
+            <div class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-xl">
+              Hey! Did you see my cat reel?
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="inline-block bg-blue-500 text-white px-4 py-2 rounded-xl">
+              Yes!! So cute 🥺
+            </div>
+          </div>
+          <div class="text-left">
+            <div class="inline-block bg-gray-100 text-gray-800 px-4 py-2 rounded-xl">
+              I think she’s becoming a celebrity 😹
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Input -->
+        <div class="border-t p-4">
+          <form class="flex items-center gap-4">
+            <input
+              type="text"
+              placeholder="Type a message..."
+              class="flex-1 border border-gray-300 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <button type="submit" class="text-blue-500 font-semibold hover:underline">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Dropdown JS -->
+    <script>
+      const menuButton = document.getElementById("menuButton");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      menuButton.addEventListener("click", () => {
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="icon" href="/images/logo.webp" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #likebtn {
+        color: red;
+        background-color: red;
+        transform: scale(1.3);
+        transition: all 0.2s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="flex bg-white text-gray-800 min-h-screen">
+    <!-- Sidebar -->
+    <aside class="bg-stone-50 w-[100px] min-h-screen">
+      <a href="/" class="m-20">
+        <img
+          src="/images/insta1.webp"
+          alt="insta"
+          class="w-10 h-10 mx-auto mt-5 p-1.5"
+        />
+      </a>
+      <a href="/home"
+        ><img src="/images/home.webp" class="w-12 h-12 mx-auto mt-5 p-1"
+      /></a>
+      <a href="/search"
+        ><img src="/images/seach.webp" class="w-12 h-12 mx-auto mt-7 p-2"
+      /></a>
+      <a href="/explore"
+        ><img src="/images/comapss.png" class="w-12 h-12 mx-auto mt-7 p-1.5"
+      /></a>
+      <a href="/reel"
+        ><img src="/images/reel2.png" class="w-12 h-12 mx-auto mt-8 p-1.5"
+      /></a>
+      <a href="/messages"
+        ><img src="/images/images.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/likes"
+        ><img src="/images/like.png" class="w-12 h-12 mx-auto mt-8 p-1"
+      /></a>
+      <a href="/postcreate"
+        ><img src="/images/create.png" class="w-12 h-12 mx-auto mt-6 p-1"
+      /></a>
+      <a href="/profile"
+        ><img
+          src="/images/buddies.webp"
+          class="w-12 h-12 rounded-full mx-auto mt-8"
+      /></a>
+
+      <!-- Menu Button -->
+      <div class="relative inline-block text-left mx-auto mt-5 w-10 ml-7">
+        <a
+          id="menuButton"
+          class="w-10 h-10 flex items-center justify-center text-3xl cursor-pointer"
+          >☰</a
+        >
+        <div
+          id="dropdownMenu"
+          class="hidden absolute left-0 bottom-full mb-2 w-56 bg-white border border-gray-200 rounded shadow-lg z-[50]"
+        >
+          <div class="py-1 text-l text-gray-700">
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">⚙️ Settings</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🗂️ Your activity</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🔖 Saved</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >🌞 Switch appearance</a
+            >
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >❗ Report a problem</a
+            >
+            <div class="border-t my-2"></div>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100">🧵 Threads</a>
+            <a href="#" class="flex px-4 py-2 hover:bg-gray-100"
+              >Switch accounts</a
+            >
+            <a
+              href="/logout"
+              class="flex px-4 py-2 text-red-600 hover:bg-gray-100"
+              >Log out</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-[100px] p-6 flex-1 overflow-auto">
+      <!-- Story Ring -->
+      <div class="relative w-36 h-36 mb-10">
+        <div
+          class="w-full h-full rounded-full p-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600"
+        >
+          <img
+            src="/images/buddies.webp"
+            alt="Story"
+            class="w-full h-full object-cover rounded-full border-2 border-white"
+          />
+        </div>
+        <div
+          class="absolute bottom-0 right-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center border-2 border-white"
+        >
+          +
+        </div>
+      </div>
+
+      <!-- Posts -->
+        
+          <div class="max-w-xl mx-auto space-y-10 ml-[100px]">
+        <div class="bg-white rounded-xl shadow p-4">
+          <!-- Post Image -->
+          <img
+            src="/images/buddies.webp"
+            alt="Post Image"
+            class="w-full rounded-lg"
+          />
+
+          <!-- Caption -->
+          <div class="mt-2 text-gray-700 flex items-center gap-2">
+            <span class="font-bold">James_khan</span>
+            <p>This is a sample caption for the post.</p>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex space-x-4 mt-3">
+            <button id="likeBtn">
+              <svg
+                id="heartIcon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 text-gray-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364 4.318 12.682a4.5 4.5 0 010-6.364z"
+                />
+              </svg>
+            </button>
+
+            <button id="commentBtn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 text-gray-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 10h.01M12 10h.01M16 10h.01M21 10c0 3.866-3.582 7-8 7a8.001 8.001 0 01-7.938-7.27c-.036-.309-.062-.619-.062-.938C5 5.58 8.134 2 12 2s7 3.582 7 8z"
+                />
+              </svg>
+            </button>
+
+            <button id="shareBtn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 text-gray-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 12v.01M4 8.003a4.992 4.992 0 011.73-3.77M4 15.996a4.992 4.992 0 001.73 3.77M20 12v.01M20 8.003a4.992 4.992 0 00-1.73-3.77M20 15.996a4.992 4.992 0 01-1.73 3.77M15 12l-6-4v8l6-4z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Comment Box -->
+          <div
+            id="btn-comment"
+            class="w-full max-w-md border mt-4 border-gray-300 rounded-md shadow-sm hidden">
+         
+            <div class="p-4 space-y-4 max-h-96 overflow-y-auto">
+              <!-- Sample Comments -->
+              <div class="flex items-start space-x-3">
+                <img
+                  src="https://i.pravatar.cc/40?img=1"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div class="flex-1">
+                  <p class="font-semibold text-sm">user_name</p>
+                  <p class="text-sm">This is a sample comment ❤️</p>
+                  <div class="text-xs text-gray-500 mt-1">2h ago</div>
+                </div>
+                <button class="text-gray-500 hover:text-red-500 text-sm">
+                  ❤️
+                </button>
+              </div>
+              <div class="flex items-start space-x-3">
+                <img
+                  src="https://i.pravatar.cc/40?img=2"
+                  class="w-10 h-10 rounded-full"
+                />
+                <div class="flex-1">
+                  <p class="font-semibold text-sm">another_user</p>
+                  <p class="text-sm">🔥🔥🔥</p>
+                  <div class="text-xs text-gray-500 mt-1">1h ago</div>
+                </div>
+                <button class="text-gray-500 hover:text-red-500 text-sm">
+                  ❤️
+                </button>
+              </div>
+            </div>
+            <hr class="border-gray-300" />
+            <div class="flex items-center px-4 py-3">
+              <input
+                id="commentInput"
+                type="text"
+                placeholder="Add a comment..."
+                class="flex-1 text-sm outline-none"
+              />
+              <button
+                id="postCommentBtn"
+                class="text-blue-500 font-semibold text-sm ml-3 hover:opacity-70"
+              >
+                Post
+              </button>
+            </div>
+            
+          </div>
+          <div id="shareModal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white w-96 rounded-xl p-4 shadow-lg relative">
+      <!-- Close Button -->
+      <button id="closeModal" class="absolute top-2 right-3 text-gray-500 hover:text-black text-xl font-bold">&times;</button>
+
+      <h2 class="text-lg font-semibold mb-3">Share Post</h2>
+
+      <!-- Search Input -->
+      <input id="searchInput" type="text" placeholder="Search users..." class="w-full px-3 py-2 border border-gray-300 rounded-lg mb-4">
+
+      <!-- User List -->
+      <div id="userList" class="space-y-3 max-h-64 overflow-y-auto">
+        <!-- Sample user profiles -->
+        <div class="user-item flex items-center space-x-3" data-username="bharath">
+          <img src="https://i.pravatar.cc/40?img=1" alt="User" class="w-10 h-10 rounded-full">
+          <span class="font-medium">bharath</span>
+        </div>
+        <div class="user-item flex items-center space-x-3" data-username="ramu">
+          <img src="https://i.pravatar.cc/40?img=2" alt="User" class="w-10 h-10 rounded-full">
+          <span class="font-medium">ramu</span>
+        </div>
+        <div class="user-item flex items-center space-x-3" data-username="sita">
+          <img src="https://i.pravatar.cc/40?img=3" alt="User" class="w-10 h-10 rounded-full">
+          <span class="font-medium">sita</span>
+        </div>
+        <!-- Add more users as needed -->
+      </div>
+    </div>
+  </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+      const menuBtn = document.getElementById("menuButton");
+      const menu = document.getElementById("dropdownMenu");
+      const likeBtn = document.getElementById("likeBtn");
+      const heartIcon = document.getElementById("heartIcon");
+      const shareBtn = document.getElementById('shareBtn');
+    const shareModal = document.getElementById('shareModal');
+    const closeModal = document.getElementById('closeModal');
+    const searchInput = document.getElementById('searchInput');
+    const userItems = document.querySelectorAll('.user-item');
+      let commentTimeout = null;
+
+      menuBtn.addEventListener("click", () => menu.classList.toggle("hidden"));
+      window.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+          menu.classList.add("hidden");
+        }
+      });
+
+      likeBtn.addEventListener("click", () => {
+        heartIcon.classList.toggle("text-red-500");
+        heartIcon.classList.toggle("text-gray-700");
+      });
+      // document.getElementById('commentBtn').addEventListener('click', () => {
+      //   const commentBox = document.getElementById('btn-comment');
+      //   commentBox.classList.remove('hidden');
+      //   if (commentTimeout) clearTimeout(commentTimeout);
+      //   commentTimeout = setTimeout(() => {
+      //     commentBox.classList.add('hidden');
+      //   }, 60000);
+      // });
+      document.getElementById('commentBtn').addEventListener('click', () => {
+       const commentSection = document.getElementById('btn-comment');
+        commentSection.classList.toggle('hidden'); // Toggle hidden class
+      });
+
+      document
+        .getElementById("postCommentBtn")
+        .addEventListener("click", () => {
+          const input = document.getElementById("commentInput");
+          const comment = input.value.trim();
+          if (comment !== "") {
+            alert(`Posted comment: ${comment}`); // Replace this with logic to add comment in UI
+            input.value = "";
+          }
+        });
+        document.getElementById('shareBtn').addEventListener('click',()=>{
+          document.getElementById('shareSection').style.display='block';
+        })
+        shareBtn.addEventListener('click', () => {
+      shareModal.classList.toggle('hidden');
+    });
+
+    closeModal.addEventListener('click', () => {
+      shareModal.classList.add('hidden');
+    });
+
+    // Filter users on search
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      userItems.forEach(item => {
+        const username = item.getAttribute('data-username');
+        if (username.includes(searchTerm)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+    </script>
+  </body>
+</html>

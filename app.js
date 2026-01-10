@@ -23,8 +23,6 @@ app.use(session({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
-
-// error handler
 app.use((req, res) => {
   res.status(404).render('error', { message: 'Page not found' });
 });

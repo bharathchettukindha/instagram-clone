@@ -8,17 +8,26 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cookieparser": "^0.1.0",
     "ejs": "^3.1.10",
+    "express": "^5.2.1",
     "express-session": "^1.18.2",
-    "mongoose": "^8.17.0",
+    "mongoose": "^8.21.0",
     "morgan": "^1.10.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharathchettukindha/insta-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bharathchettukindha/insta-clone/issues"
+  },
+  "homepage": "https://github.com/bharathchettukindha/insta-clone#readme",
+  "description": ""
 }
